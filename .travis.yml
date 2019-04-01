@@ -3,7 +3,22 @@ services:
   - docker
 
 before_install:
-  - docker build -t Hamzabutt1401/docker-practise -f Dockerfile.dev .
+  - docker build -t hamzabutt1401/docker-practise -f Dockerfile.dev .
 
 script:
   - docker run hamzabutt1401/docker-practise npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "DockerPractise"
+  env: "Dockerpractise-env"
+  bucket_name: "elasticbeanstalk-us-east-2-528570197817"
+  bucket_path: "DockerPractise"
+  on:
+    branch: master
+  
+  acess_key_id: $Access-key-ID
+  secret_access_key:
+    secure: "$Secret-access-key"
+

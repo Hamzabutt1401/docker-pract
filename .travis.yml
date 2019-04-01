@@ -17,8 +17,8 @@ deploy:
   bucket_path: "DockerPractise"
   on:
     branch: master
-  access_key_id: $Access-key-ID 
+  access_key_id: $ACCESS_KEY_ID
   secret_access_key:
-    secure: "$Secret-access-key"
+    secure: "$SECRET_KEY"
 
 #hh

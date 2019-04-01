@@ -6,4 +6,4 @@ before_install:
   - docker build -t Hamzabutt1401/docker-practise -f Dockerfile.dev .
 
 script:
-  - docker run Hamzabutt1401/docker-practise npm run test -- --coverage
+  - docker run hamzabutt1401/docker-practise npm run test -- --coverage
